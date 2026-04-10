@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semiconductor Dictionary</title>
+
+  <!-- Font đẹp -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>🔬 Semiconductor Dictionary</h1>
+
+  <nav>
+    <button onclick="showTab('home')">Trang chủ</button>
+    <button onclick="showTab('dictionary')">Từ điển</button>
+    <button onclick="showTab('category')">Phân loại</button>
+    <button onclick="showTab('favorites')">Yêu thích</button>
+    <button onclick="showTab('history')">Lịch sử</button>
+    <button onclick="showTab('quiz')">Quiz</button>
+    <button onclick="showTab('contribute')">Đóng góp</button>
+    <button onclick="showTab('profile')">Hồ sơ</button>
+  </nav>
+
+  <div class="auth">
+    <button onclick="handleLogin()">Login</button>
+    <button onclick="handleLogout()">Logout</button>
+  </div>
+
+  <button onclick="toggleTheme()">🌙</button>
+</header>
+
+<!-- LOADING -->
+<div id="loading" style="display:none; text-align:center; margin-top:20px;">
+  ⏳ Đang tải...
+</div>
+
+<!-- MAIN -->
+<main id="content"></main>
+
+<script type="module" src="app.js"></script>
+
+</body>
+</html>

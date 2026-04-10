@@ -1,0 +1,330 @@
+/* ================= CẤU HÌNH BIẾN (VARIABLES) ================= */
+:root {
+  --primary-color: #2563eb;       /* Blue Tech */
+  --secondary-color: #10b981;     /* Emerald Green */
+  --bg-light: #f8fafc;
+  --bg-dark: #0f172a;
+  --card-light: #ffffff;
+  --card-dark: #1e293b;
+  --text-light: #1e293b;
+  --text-dark: #f1f5f9;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ================= TỔNG THỂ ================= */
+body {
+  font-family: 'Inter', "Segoe UI", system-ui, sans-serif;
+  margin: 0;
+  background: var(--bg-light);
+  color: var(--text-light);
+  transition: var(--transition);
+  line-height: 1.6;
+}
+
+body.dark {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+/* ================= HEADER & NAV ================= */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1e293b; /* Luôn giữ màu đậm cho header tạo nét chuyên nghiệp */
+  color: white;
+  padding: 12px 5%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+nav button {
+  background: transparent;
+  border: none;
+  color: #cbd5e1;
+  margin: 0 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: var(--transition);
+}
+
+nav button:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ================= TRANG CHỦ (HERO SECTION) ================= */
+.home-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.home-container h1 {
+  font-size: 2.5rem;
+  background: linear-gradient(90deg, #3b82f6, #10b981);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+}
+
+/* ================= SEARCH BOX NÂNG CẤP ================= */
+.search-wrapper {
+  position: relative;
+  max-width: 600px;
+  margin: 30px auto;
+}
+
+.search-box-pro, .search-box {
+  width: 100%;
+  padding: 16px 20px;
+  border-radius: 14px;
+  border: 2px solid #e2e8f0;
+  outline: none;
+  font-size: 1rem;
+  transition: var(--transition);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.dark .search-box-pro, .dark .search-box {
+  background: #334155;
+  border-color: #475569;
+  color: white;
+}
+
+.search-box:focus, .search-box-pro:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+/* Suggestions */
+.suggestions {
+  position: absolute;
+  width: 100%;
+  background: white;
+  border-radius: 12px;
+  margin-top: 8px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  overflow: hidden;
+  z-index: 99;
+}
+
+.dark .suggestions { background: #1e293b; }
+
+.suggest-item {
+  padding: 12px 20px;
+  border-bottom: 1px solid #f1f5f9;
+  cursor: pointer;
+}
+
+.suggest-item:hover { background: #f8fafc; color: var(--primary-color); }
+.dark .suggest-item:hover { background: #334155; }
+
+/* ================= GRID & CARDS ================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px 5%;
+}
+
+.card {
+  background: var(--card-light);
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,0.05);
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dark .card {
+  background: var(--card-dark);
+  border-color: rgba(255,255,255,0.05);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+  border-color: var(--primary-color);
+}
+
+.card h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.25rem;
+  color: var(--primary-color);
+}
+
+.card p {
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+  opacity: 0.8;
+}
+
+.card small {
+  background: #f1f5f9;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  align-self: flex-start;
+}
+
+.dark .card small { background: #334155; color: #cbd5e1; }
+
+/* ================= TRANG CHI TIẾT (DETAIL VIEW) ================= */
+.detail-view {
+  max-width: 800px;
+  margin: 40px auto;
+  background: white;
+  padding: 40px;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.dark .detail-view { background: #1e293b; }
+
+.detail-view img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin: 20px 0;
+}
+
+.info-box {
+  background: #f8fafc;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.dark .info-box { background: #334155; }
+
+.btn-back {
+  background: none;
+  border: 1px solid #e2e8f0;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+/* ================= TRẮC NGHIỆM (QUIZ) ================= */
+.quiz-container {
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.quiz-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin: 25px 0;
+}
+
+.btn-quiz {
+  padding: 15px;
+  border-radius: 12px;
+  border: 2px solid #e2e8f0;
+  background: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.btn-quiz:hover {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.dark .btn-quiz { background: #334155; border-color: #475569; color: white; }
+
+/* ================= NÚT BẤM (BUTTONS) ================= */
+.btn-fav {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  background: #f1f5f9;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-fav.active {
+  background: #fee2e2;
+  color: #ef4444;
+}
+
+.btn-fav:hover { transform: scale(1.02); }
+
+/* ================= UTILS ================= */
+.highlight {
+  color: var(--secondary-color);
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--primary-color);
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .quiz-grid { grid-template-columns: 1fr; }
+  .grid { grid-template-columns: 1fr; }
+  header h1 { font-size: 1rem; }
+  nav button { padding: 5px; font-size: 0.8rem; }
+}
+
+.card img {
+  width: 100%;        /* Chiều rộng chiếm hết card */
+  height: 180px;      /* Cố định chiều cao cho tất cả các ảnh */
+  object-fit: cover;  /* QUAN TRỌNG: Ảnh sẽ tự cắt (crop) để lấp đầy khung mà không bị méo */
+  object-position: center; /* Luôn lấy phần giữa của ảnh */
+  border-radius: 8px;
+  background-color: #f1f5f9; /* Màu nền dự phòng nếu ảnh lỗi hoặc trong suốt */
+}
+
+.card {
+  overflow: hidden; /* Cắt phần ảnh thừa khi zoom */
+}
+
+.card img {
+  transition: transform 0.5s ease;
+}
+
+.card:hover img {
+  transform: scale(1.1); /* Ảnh phóng to nhẹ khi di chuột vào card */
+}
+
+.detail-view img {
+  width: 100%;
+  max-height: 450px;   /* Không cho phép quá cao làm trôi nội dung */
+  object-fit: contain; /* Ở trang chi tiết nên dùng contain để xem toàn bộ sơ đồ mạch */
+  background: #eee;
+  border-radius: 12px;
+}
