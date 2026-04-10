@@ -12,21 +12,24 @@
 <body>
 
 <header>
-  <div class="header-top">
-    <h1>🔬 Semiconductor Dictionary</h1>
-    <div class="header-controls">
-      <button class="btn-icon" onclick="toggleTheme()" title="Đổi màu nền">🌓</button>
-      
-      <div class="auth-zone">
-        <div id="auth-guest">
-          <button class="btn-login-head" onclick="handleLogin()">Login</button>
-        </div>
+  <div class="header-main">
+    <h1>🔬 Semiconductor</h1>
+    
+    <div class="header-actions">
+      <button class="theme-toggle" onclick="toggleTheme()" title="Chế độ sáng/tối">
+        <span class="icon-sun">☀️</span>
+        <span class="icon-moon">🌙</span>
+      </button>
 
+      <div class="auth-group">
+        <div id="auth-guest">
+          <button class="btn-primary" onclick="handleLogin()">Đăng nhập</button>
+        </div>
         <div id="auth-user" style="display: none;">
-          <div class="user-info-head">
-            <img id="head-avatar" src="" alt="avatar">
+          <div class="user-pill">
+            <img id="head-avatar" src="" alt="">
             <span id="head-username"></span>
-            <button class="btn-logout-head" onclick="handleLogout()">Logout</button>
+            <button class="btn-logout-small" onclick="handleLogout()">🚪</button>
           </div>
         </div>
       </div>
@@ -43,6 +46,7 @@
     <button class="nav-item" onclick="showTab('contribute')">Đóng góp</button>
     <button class="nav-item" onclick="showTab('profile')">Hồ sơ</button>
   </nav>
+  
 </header>
 
 <div id="loading" style="display:none; text-align:center; padding: 20px;">
