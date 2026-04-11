@@ -8,7 +8,7 @@ import {
   signOut,
   onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-
+ import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-analytics.js";
 import {
   getFirestore,
   doc,
@@ -25,7 +25,7 @@ const firebaseConfig = {
   storageBucket : "tu-dien-vi-mach-ban-dan.firebasestorage.app" , 
   messagingSenderId : "210075819588" , 
   appId : "1:210075819588:web:e4607b9a0e00a9e1ac6611"
-
+  measurementId: "G-SPSXV8FQ0T"
 };
 
 // ================= INIT =================
@@ -33,7 +33,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 const provider = new GoogleAuthProvider();
-
+const analytics = getAnalytics(app);
 // ================= STATE =================
 let isLoggingIn = false;
 
