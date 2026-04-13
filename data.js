@@ -1,5 +1,5 @@
 export const dictionary =[
-    {
+  {
     "EN": "AC (Alternating Current)",
     "VN": "Dòng xoay chiều",
     "khai-niem": "Dòng điện xoay chiều – dòng điện có hướng và cường độ thay đổi theo thời gian (thường theo dạng sóng sin).",
